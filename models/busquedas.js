@@ -71,6 +71,7 @@ export default class Busquedas {
         if (!this.historial.includes(lugar.toLowerCase())) {
 
             this.historial.unshift(lugar.toLowerCase());
+            this.historial = this.historial.splice(0, 5); // El segundo parámetro corresponde al límite del historial
             this.guardarDB();
 
         }
